@@ -1,20 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int primerNumero;
-    int segundoNumero;
-    int resultado;
+void validar() {
+	float primerNumero;
+	float segundoNumero;
 
-    cout << "Ingrese un numero: ";
-    cin >> primerNumero;
-    cout << "Ingrese otro numero: ";
-    cin >> segundoNumero;
+	cout << "Ingrese un Numero: ";
+	
+	if (scanf("%f", &primerNumero) != 1) {
+		printf("Ingrese un numero valido");
+		cout << endl;
+	}
+	else {
 
-    resultado = primerNumero + segundoNumero;
+		cout << "Ingrese otro Numero: ";
 
-    cout << primerNumero << " + " << segundoNumero << " = " << resultado;
+		if (scanf("%f", &segundoNumero) != 1) {
+			printf("Ingrese un numero valido");
+			cout << endl;
+		}
+
+		else {
+			int resultado = primerNumero + segundoNumero;
+			cout << endl;
+			printf("El resultado es: " "%d", resultado);
+			cout << endl;
+		}
+	}
+}
+
+int main() {
+	cout << "Suma de Dos Numeros";
+	cout << endl;
+	cout << endl;
+	validar();
 
     return 0;
 }
